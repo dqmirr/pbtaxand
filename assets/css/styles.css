@@ -1,0 +1,100 @@
+:root{
+	--bg-white-transparent: #ffffff80;
+	--header-bottom-color: #FCB034;
+	--primary: #FCB034;
+	--danger-color: #dc3545;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+
+/* .body-bg-image {
+	background-image:url('/assets/images/bg-disclaimer.jpeg');
+	background-size: 100vw 100vh;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+} */
+
+.body-bg-image-disclaimer {
+	background-image:url('/assets/images/bg-disclaimer.jpeg');
+	background-repeat: no-repeat;
+	background-size: 100vw 93vh;
+	position: absolute;
+	left: 0px;
+	width: 100vw;
+	top:70px;
+	bottom: 0;
+}
+
+.body-bg-image-main {
+	background-image:url('/assets/images/pbtaxand/BG_1-02-min.jpeg');
+	background-repeat: repeat;
+	background-size: 100vw 100vh;
+}
+
+.body-bg-image-main img{
+	object-fit: contain;
+	margin-top:1rem; 
+	margin-left: 2rem;
+}
+
+.body-bg-image-taxand {
+	background-image:url('/assets/images/background_taxand.jpeg');
+	background-size: 100vw 93vh;
+	background-origin: border-box;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:78px;
+	bottom: -30px;
+}
+
+.header {
+	border-bottom: 3px solid var(--header-bottom-color);
+	background-color: #fff;
+	min-height: 50px;
+	margin:0;
+}
+
+.header img{
+	height: 50px;
+}
+
+.main-info{
+	background-color: #ffffff;
+	padding: 1.5rem;
+	border-radius: 1rem;
+}
+
+.main-info a {
+	font-size: 1em;
+	color: var(--danger-color);
+	text-shadow: white 1px 1px;
+}
+
+.card-login{
+	background-color: #ffffff;
+	border-radius: 1rem;
+	margin-top: 1rem;
+}
+
+.card-transparent{
+	background-color: var(--bg-white-transparent);
+	border-radius: 1rem;
+}
+/* 
+.container-body{
+	position: fixed;
+	top: 150px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+} */

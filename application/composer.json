@@ -1,0 +1,15 @@
+{
+    "name": "vendor/pbtaxand",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Pbtaxand\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ikbal chahyadi",
+            "email": "cahyadiikbal@gmail.com"
+        }
+    ],
+    "require": {}
+}

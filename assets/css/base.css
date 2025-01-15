@@ -1,0 +1,30 @@
+.drop {
+	box-shadow: 0 2px 15px rgba(0,0,0,1);
+}
+
+.selisih {
+	display: inline-block;
+	font-size: 72px;
+}
+
+.rotate.r90 {
+	/* Safari */
+	-webkit-transform: rotate(90deg);
+
+	/* Firefox */
+	-moz-transform: rotate(90deg);
+
+	/* IE */
+	-ms-transform: rotate(90deg);
+
+	/* Opera */
+	-o-transform: rotate(90deg);
+
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+.selisih.rotate.r90 {
+	line-height: 1px;
+	margin-left: 16px;
+}

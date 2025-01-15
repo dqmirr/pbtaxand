@@ -1,0 +1,713 @@
+{
+	"disc_category":[
+			{
+					"id":1,
+					"name":"M",
+					"description":"Most"
+			},
+			{
+					"id":2,
+					"name":"L",
+					"description":"Least"
+			},
+			{
+					"id":3,
+					"name":"C",
+					"description":"Change"
+			}
+	],
+	"disc_list":[
+			{
+					"id":"11",
+					"name":"D",
+					"category_id":1,
+					"score": 8
+			},
+			{
+					"id":"12",
+					"name":"I", 
+					"category_id":1,
+					"score": 3
+			},
+			{
+					"id":"13",
+					"name":"S",
+					"category_id":1,
+					"score": 7
+			},
+			{
+					"id":"14",
+					"name":"C",
+					"category_id":1,
+					"score": 1
+			},
+			{
+					"id":"15",
+					"name":"B",
+					"category_id":1,
+					"score": 5
+			},
+			{
+					"id":"21",
+					"name":"D",
+					"category_id":2,
+					"score": 4
+			},
+			{
+					"id":"22",
+					"name":"I",
+					"category_id":2,
+					"score": 5
+			},
+			{
+					"id":"23",
+					"name":"S",
+					"category_id":2,
+					"score": 5
+			},
+			{
+					"id":"24",
+					"name":"C",
+					"category_id":2,
+					"score": 2
+			},
+			{
+					"id":"25",
+					"name":"B",
+					"category_id":2,
+					"score": 8
+			},
+			{
+					"id":"31",
+					"name":"D",
+					"category_id":3,
+					"score": 4
+			},
+			{
+					"id":"32",
+					"name":"I",
+					"category_id":3,
+					"score": -2
+			},
+			{
+					"id":"33",
+					"name":"S",
+					"category_id":3,
+					"score": 2
+			},
+			{
+					"id":"34",
+					"name":"C",
+					"category_id":3,
+					"score": -1
+			},
+			{
+					"id":"35",
+					"name":"B",
+					"category_id":3,
+					"score": 13
+			}
+	],
+	"disc_test":[
+			{
+					"no": 1,
+					"list_options": [
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Mudah bergaul, menyenangkan"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Mudah percaya kepada orang lain"
+							},
+							{
+									"M": "15",
+									"L": "21",
+									"question": "Suka berpetualangan, pengambil Resiko"
+							},
+							{
+									"M": "14",
+									"L": "24",
+									"question": "Penuh toleransi, menghormati orang lain"
+							}
+					]
+			},
+			{
+					"no": 2,
+					"list_options": [
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Hasil adalah segalanya"
+							},
+							{
+									"M": "24",
+									"L": "24",
+									"question": "Lakukan dengan benar, ketepatan adalah penting"
+							},
+							{
+									"M": "15",
+									"L": "22",
+									"question": "Buatlah sesuatu menjadi menyenangkan"
+							},
+							{
+									"M": "15",
+									"L": "33",
+									"question": "Mari lakukan bersama-sama"
+							}
+					]
+			},
+			{
+					"no": 3,
+					"list_options": [
+							{
+									"M": "15",
+									"L": "24",
+									"question": "Pendidikan, budaya"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Prestasi, penghargaan"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Keselamatan, keamanan"
+							},
+							{
+									"M": "12",
+									"L": "25",
+									"question": "Bergaul, berkumpul dengan kelompok"
+							}
+					]
+			},
+			{
+					"no": 4,
+					"list_options": [
+							{
+									"M": "14",
+									"L": "25",
+									"question": "Berbicara lembut, pendiam/penyendiri"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Optimis, berpikir positif, memiliki visi/tujuan"
+							},
+							{
+									"M": "15",
+									"L": "22",
+									"question": "Pusat perhatian, mudah bersosialisasi"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Pendamai, pembawa keharmonisan"
+							}
+					]
+			},
+			{
+					"no": 5,
+					"list_options": [
+							{
+									"M": "15",
+									"L": "24",
+									"question": "Tidak tergantung orang lain"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Akan membeli mengikuti dorongan hati"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Akan menunggu denagn sabar"
+							},
+							{
+									"M": "12",
+									"L": "25",
+									"question": "Akan mengeluarkan uang untuk hal yang diinginkan"
+							}
+					]
+			},
+			{
+					"no": 6,
+					"list_options": [
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Memimpin, bicara langsung"
+							},
+							{
+									"M": "15",
+									"L": "22",
+									"question": "Terbuka, antusias, bersemangat"
+							},
+							{
+									"M": "15",
+									"L": "23",
+									"question": "Mudah diduga, konsisten"
+							},
+							{
+									"M": "14",
+									"L": "25",
+									"question": "Berhati-hati"
+							}
+					]
+			},
+			{
+					"no": 7,
+					"list_options": [
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Memberikan dorongan kepada orang lain"
+							},
+							{
+									"M": "15",
+									"L": "24",
+									"question": "Berusaha untuk selalu sempurna"
+							},
+							{
+									"M": "15",
+									"L": "23",
+									"question": "Menjadi bagian dari sebuah kelompok"
+							},
+							{
+									"M": "11",
+									"L": "25",
+									"question": "Ingin menetapkan tujuan"
+							}
+					]
+			},
+			{
+					"no": 8,
+					"list_options": [
+							{
+									"M": "13",
+									"L": "25",
+									"question": "Ramah, mudah berteman"
+							},
+							{
+									"M": "15",
+									"L": "22",
+									"question": "Unik, mudah bosan terhadap rutinitas"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Aktif mengubah sesuatu"
+							},
+							{
+									"M": "14",
+									"L": "24",
+									"question": "Ingin segala sesuatu tepat"
+							}
+					]
+			},
+			{
+					"no": 9,
+					"list_options": [
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Tidak mudah dikalahkan/ ditundukkan"
+							},
+							{
+									"M": "13",
+									"L": "25",
+									"question": "Mengikuti keinginan/perintah pemimpin"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Bersemangat, periang"
+							},
+							{
+									"M": "15",
+									"L": "24",
+									"question": "Ingin teratur, rapi"
+							}
+					]
+			},
+			{
+					"no": 10,
+					"list_options": [
+							{
+									"M": "14",
+									"L": "24",
+									"question": "Mudah menjadi frustasi"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Memendam perasaan, tertutup"
+							},
+							{
+									"M": "15",
+									"L": "22",
+									"question": "Menyampaikan pendapatnya, terbuka"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Berani menghadapi pihak oposisi"
+							}
+					]
+			},
+			{
+					"no": 11,
+					"list_options": [
+							{
+									"M": "15",
+									"L": "23",
+									"question": "Tidak melawan, mengalah"
+							},
+							{
+									"M": "14",
+									"L": "25",
+									"question": "Menyukai hal rinci/detil"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Berubah di saat-saat terakhir"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Penuntut, kasar"
+							}
+					]
+			},
+			{
+					"no": 12,
+					"list_options": [
+							{
+									"M": "11",
+									"L": "25",
+									"question": "Saya akan memimpin orang lain"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "saya akan melaksanakannya"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "saya akan meyakinkan orang lain"
+							},
+							{
+									"M": "14",
+									"L": "25",
+									"question": "saya akan mendapatkan fakta"
+							}
+					]
+			},
+			{
+					"no": 13,
+					"list_options": [
+							{
+									"M": "12",
+									"L": "25",
+									"question": "Penuh semangat, banyak bicara"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Bertindak cepat, tegas"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Mencoba untuk menjaga kedamaian"
+							},
+							{
+									"M": "15",
+									"L": "24",
+									"question": "Mencoba untuk mengikuti aturan"
+							}
+					]
+			},
+			{
+					"no": 14,
+					"list_options": [
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Ingin maju"
+							},
+							{
+									"M": "13",
+									"L": "25",
+									"question": "Puas dengan apa yang ada, puas hati"
+							},
+							{
+									"M": "12",
+									"L": "25",
+									"question": "Terbuka mengungkapkan perasaan"
+							},
+							{
+									"M": "15",
+									"L": "24",
+									"question": "Rendah hati, sederhana"
+							}
+					]
+			},
+			{
+					"no": 15,
+					"list_options": [
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Mendahulukan kepentingan orang lain"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Suka bersaing, suka tantangan"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Optimis, berpikir positif"
+							},
+							{
+									"M": "15",
+									"L": "24",
+									"question": "Berpikir logis, sistematis"
+							}
+					]
+			},
+			{
+					"no": 16,
+					"list_options": [
+							{
+									"M": "14",
+									"L": "25",
+									"question": "Mengatur waktu dengan baik"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Seringkali terburu-buru, merasa tertekan"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Berhubungan dengan orang lain adalah penting"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Senang menyelesaikan hal yang telah dimulai"
+							}
+					]
+			},
+			{
+					"no": 17,
+					"list_options": [
+							{
+									"M": "14",
+									"L": "24",
+									"question": "Tenang, suka menyendiri/pendiam"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Gembira, periang"
+							},
+							{
+									"M": "13",
+									"L": "25",
+									"question": "Menyenangkan, ramah"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Tegas, berani"
+							}
+					]
+			},
+			{
+					"no": 18,
+					"list_options": [
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Menyenangkan orang, mudah setuju"
+							},
+							{
+									"M": "15",
+									"L": "22",
+									"question": "Tertawa dengan keras, hidup"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Berani, tegas"
+							},
+							{
+									"M": "14",
+									"L": "24",
+									"question": "Pendiam/suka menyendiri"
+							}
+					]
+			},
+			{
+					"no": 19,
+					"list_options": [
+							{
+									"M": "13",
+									"L": "25",
+									"question": "Menolak perubahan yang mendadak"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Cenderung terlalu banyak berjanji"
+							},
+							{
+									"M": "15",
+									"L": "24",
+									"question": "Menarik diri ketika dibawah tekanan"
+							},
+							{
+									"M": "15",
+									"L": "21",
+									"question": "Tidak takut untuk konfrontasi langsung"
+							}
+					]
+			},
+			{
+					"no": 20,
+					"list_options": [
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Menghabiskan waktu dengan orang lain"
+							},
+							{
+									"M": "14",
+									"L": "25",
+									"question": "Merencanakan masa depan, penuh persiapan"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Mencari tantangan baru"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Menerima penghargaan untuk tujuan yang tercapai"
+							}
+					]
+			},
+			{
+					"no": 21,
+					"list_options": [
+							{
+									"M": "15",
+									"L": "21",
+									"question": "Menginginkan otoritas yang lebih"
+							},
+							{
+									"M": "12",
+									"L": "25",
+									"question": "Menginginkan kesempatan baru"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Menghindari konflik"
+							},
+							{
+									"M": "15",
+									"L": "24",
+									"question": "Menginginkan arahan yang jelas"
+							}
+					]
+			},
+			{
+					"no": 22,
+					"list_options": [
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Pendorong, pemberi semangat yang baik"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Pendengar yang baik"
+							},
+							{
+									"M": "14",
+									"L": "24",
+									"question": "Penganalisis yang baik"
+							},
+							{
+									"M": "11",
+									"L": "21",
+									"question": "Pendelegasi yang baik"
+							}
+					]
+			},
+			{
+					"no": 23,
+					"list_options": [
+							{
+									"M": "15",
+									"L": "21",
+									"question": "Peraturan perlu diuji"
+							},
+							{
+									"M": "14",
+									"L": "25",
+									"question": "Peraturan membuat adil"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Perauran membuat bosan"
+							},
+							{
+									"M": "13",
+									"L": "23",
+									"question": "Peraturan membuat aman"
+							}
+					]
+			},
+			{
+					"no": 24,
+					"list_options": [
+							{
+									"M": "15",
+									"L": "23",
+									"question": "Dapat dipercaya/diandalkan"
+							},
+							{
+									"M": "12",
+									"L": "22",
+									"question": "Kreatif, unik"
+							},
+							{
+									"M": "11",
+									"L": "25",
+									"question": "Berorientasi pada hasil"
+							},
+							{
+									"M": "14",
+									"L": "25",
+									"question": "Memegang standar yang tinggi, teliti"
+							}
+					]
+			}
+	]
+}

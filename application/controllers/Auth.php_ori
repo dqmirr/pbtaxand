@@ -1,0 +1,152 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Auth extends Ci_Controller {
+	
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->database();
+	}
+	
+	public function ajax_auth()
+	{
+		$json = array();
+		
+		try
+		{
+			$this->load->model('auth_model');
+
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			
+			if ($this->auth_model->validate($username, $password, $output, $error))
+			{
+				$this->session->set_userdata($output);
+				$this->userslog->log('login');
+				$redirect = site_url('exam');
+			}
+			else
+			{
+				if ($error !== null)
+				{
+					throw new Exception($error);
+				}
+				
+				throw new Exception('Cek kembali email dan password anda.');
+			}
+			
+			$time = date('Y-m-d H:i:s');
+			
+			$data_login = array('last_login' => $time);
+			
+			if ($output['first_login'] == '')
+			{
+				$data_login['first_login'] = $data_login['last_login'];
+				
+				$this->userslog->log('login pertama kali');
+			}
+			
+			$this->auth_model->save_login_data($username, $data_login);
+			
+			$jadwal_login = $this->auth_model->check_jadwal_login($username);
+			
+			if (! $jadwal_login)
+			{
+				$this->ajax_logout(true);
+				throw new Exception('Anda belum memiliki jadwal ujian.');
+			}
+			
+			if ($time < $jadwal_login->time_from || $time > $jadwal_login->time_to)
+			{
+				$this->ajax_logout(true);
+				throw new Exception('Saat ini bukan jadwal ujian Anda.');
+			}
+			else
+			{
+				$this->session->set_userdata('time_from', $jadwal_login->time_from);
+				$this->session->set_userdata('time_to', $jadwal_login->time_to);
+			}
+			
+			/*
+			// Get saved sessions
+			$sessions = $this->auth_model->get_sessions($output['id'], $_COOKIE['ci_session']);
+			
+			if (count($sessions) > 0)
+			{
+				$redisClient = new Redis();
+				$redisClient->connect('redis', 6379 );
+			
+				foreach ($sessions as $sname)
+				{
+					$redisClient->delete('ci_session:'.$sname->session_name);
+					
+					if (method_exists($redisClient, 'unlink'))
+					{
+						$redisClient->unlink('ci_session:'.$sname->session_name);
+					}
+					
+					$this->auth_model->delete_saved_session($output['id'], $sname->session_name);
+				}
+			}
+			
+			// Save Session
+			$this->auth_model->save_session($output['id'], $_COOKIE['ci_session']);
+			*/
+			
+			if ($output['agree_code'] == '')
+			{
+				$text = 'setuju';
+				$disclaimer = '';
+				
+				for ($i=0; $i<strlen($text); $i++)
+				{
+					if (rand(0,1))
+						$disclaimer .= strtoupper($text[$i]);
+					else
+						$disclaimer .= $text[$i];
+				}
+				
+				$this->session->set_userdata('disclaimer', $disclaimer);
+				$redirect = site_url('page/disclaimer');
+			}
+			
+			$json['redirect'] = $redirect;
+			$json['success'] = true;
+		}
+		catch (Exception $e)
+		{
+			$json['error'] = true;
+			$json['msg'] = $e->getMessage();
+		}
+		
+		header('Content-Type: Application/JSON');
+		echo json_encode($json);
+	}
+	
+	public function ajax_logout($no_return=false)
+	{
+		if (! $this->session->userdata('username'))
+		{
+			$json = array('success'=>true, 'redirect'=>site_url('/'));
+			
+			header('Content-Type: Application/JSON');
+			echo json_encode($json);
+			return;
+		}
+		
+		$this->load->model('auth_model');
+		$this->auth_model->save_login_data($this->session->userdata('username'), array('last_logout' => date('Y-m-d H:i:s')));
+		
+		$this->userslog->log('logout');
+		
+		$this->session->sess_destroy();
+		
+		if ($no_return==false)
+		{
+			$json = array('success'=>true, 'redirect'=>site_url('/'));
+			
+			echo json_encode($json);
+		}
+	}
+}

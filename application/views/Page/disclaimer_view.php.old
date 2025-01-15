@@ -1,0 +1,161 @@
+<script>
+app.controller('main', function($scope, $http){
+	// ...
+})
+</script>
+
+<style>
+.btn{
+    white-space:normal !important;
+    word-wrap: break-word; 
+}
+video, canvas {
+  width: 100%    !important;
+  height: auto   !important;
+}
+</style>
+
+<div class="row mt-3">
+	<div class="col">
+		
+		<div class="row">
+			<div class="col mx-3 border">
+<?php echo $disclaimer_text;?>
+			</div>
+		</div>
+
+		<form method="POST" action="<?php echo $target_url;?>">
+			<?php if ($harus_upload_foto):?>
+			<input type="hidden" name="pic" id="pic" />
+			
+			<div class="row mt-3">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<video id="video" width="1" height="480" style="max-width: 100%;" autoplay></video>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12" style="position: relative;">
+					<canvas id="canvas" width="640" height="480" style="max-width: 100%;"></canvas>
+					<canvas id="canvas_mask" width="640" height="480" style="max-width: 100%; position: absolute; top: 0; left: 0;"></canvas>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<button class="btn btn-danger btn-block btn-lg" type="button" id="snap">
+						<span class="oi oi-camera-slr"></span> &nbsp; AMBIL FOTO
+					</button>
+				</div>
+			</div>
+			
+			<div class="row mt-3">
+				<div class="col">
+					<h4>Ketentuan</h4>
+					<ul> 
+						<li>Dengan menekan tombol "<strong>Ambil Foto</strong>" diasumsikan Anda telah bersedia untuk dilakukan pengambilan foto demi kepentingan proses seleksi di <?php echo $this->config->item('app_name'), ' ', date('Y');?>. </li>
+						<li>Pihak kami tidak akan menggunakan foto ini di luar kepentingan proses seleksi di <?php echo $this->config->item('app_name'), ' ', date('Y');?>.</li>
+					</ul>
+				</div>
+			</div>
+			
+			<?php endif;?>
+			
+			<div class="row mt-3">
+				<div class="col text-center">
+					<span>
+						Ketik atau salin kata berikut pada input box yang tersedia untuk melanjutkan <strong>(Perhatikan huruf besar dan kecilnya)</strong>:
+					</span>
+					
+					<h3 class="alert alert-warning"><?php echo $this->session->userdata('disclaimer');?></h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 col-lg-6 mb-3">
+					<input required="required" name="text_setuju" type="text" class="form-control border-primary" placeholder="Masukkan di sini" />
+				</div>
+				<div class="col-sm-12 col-lg-6">
+					<button type="submit" class="btn btn-primary btn-block">Saya telah membaca dan menyetujui syarat dan ketentuan tersebut</button>
+				</div>
+			</div>
+		
+		</form>
+	</div>
+</div>
+
+<div class="row mb-5"></div>
+
+<?php if ($harus_upload_foto):?>
+<script>
+	$(function(){
+		var canvas = document.getElementById('canvas');
+		var canvas_mask = document.getElementById('canvas_mask');
+		
+		$('form').on('submit', function(){
+			var blank = document.createElement('canvas');
+		
+			blank.width = canvas.width;
+			blank.height = canvas.height;
+
+			if (canvas.toDataURL() == blank.toDataURL()) {
+				alert('Foto belum diambil. Silahkan tekan tombol "AMBIL FOTO" terlebih dahulu.');
+				return false;	
+			}
+			
+			var imageData = canvas.toDataURL('image/jpeg', 0.85);
+			$('#pic').val(imageData)
+		})
+		
+		var ctx = canvas_mask.getContext("2d");
+		
+		ctx.font = "18px Arial";
+		ctx.textAlign = "center";
+		ctx.fillText("Belum ada foto yang diambil.", canvas.width/2, canvas.height/2 - 20);
+		ctx.fillStyle = "red";
+		ctx.fillText("[ Klik tombol AMBIL FOTO ]",canvas.width/2, canvas.height/2 + 20);
+	})
+	
+	// Put event listeners into place
+	window.addEventListener("DOMContentLoaded", function() {
+		// Grab elements, create settings, etc.
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+		var video = document.getElementById('video');
+		var mediaConfig =  { video: true };
+		var errBack = function(e) {
+			console.log('An error has occurred!', e)
+		};
+
+		// Put video listeners into place
+		if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+			navigator.mediaDevices.getUserMedia(mediaConfig).then(function(stream) {
+				video.src = window.URL.createObjectURL(stream);
+				video.play();
+			});
+		}
+
+		/* Legacy code below! */
+		else if(navigator.getUserMedia) { // Standard
+			navigator.getUserMedia(mediaConfig, function(stream) {
+				video.src = stream;
+				video.play();
+			}, errBack);
+		} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+			navigator.webkitGetUserMedia(mediaConfig, function(stream){
+				video.src = window.webkitURL.createObjectURL(stream);
+				video.play();
+			}, errBack);
+		} else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
+			navigator.mozGetUserMedia(mediaConfig, function(stream){
+				video.src = window.URL.createObjectURL(stream);
+				video.play();
+			}, errBack);
+		}
+
+		// Trigger photo take
+		document.getElementById('snap').addEventListener('click', function() {
+			context.drawImage(video, 0, 0, 640, 480);
+			document.getElementById('canvas_mask').style.display = 'none';
+		});
+	}, false);
+
+</script>
+<?php endif;?>

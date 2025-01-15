@@ -1,0 +1,41 @@
+services:
+  app:
+    container_name: app
+    image: pbtaxand:1.0.3
+    working_dir: /var/www/html/
+    volumes:
+      - .:/var/www/html/
+      - shared_data:/shared
+    ports:
+      - 8080:80
+    command: bash -c "composer update && /usr/sbin/apache2ctl -DFOREGROUND && service redis-server start"
+    networks:
+      - app-network
+    depends_on:
+      - app-mysql
+  app-mysql:
+    container_name: app_mysql
+    image: 'mysql/mysql-server:8.0'
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: 'pbtaxand'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - 'app-mysql:/var/lib/mysql'
+      - shared_data:/shared
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
+# command:
+# mv 
+volumes:
+  app-mysql:
+    driver: local
+  shared_data:

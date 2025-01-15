@@ -1,0 +1,66 @@
+
+
+:root {
+    --tagify-dd-item-pad: .4em .7em;
+}
+
+.tagify__dropdown.users-list .tagify__dropdown__item{
+    display: grid;
+    grid-template-areas: "avatar name";
+}
+
+.tagify__dropdown.users-list span{
+    grid-area: email;
+    width: 100%;
+    font-size: .9em;
+    opacity: .6;
+}
+
+.tagify__dropdown.users-list .remove-all-tags{
+    float: right;
+    font-size: .7em;
+    padding: .2em .3em;
+    border-radius: 3px;
+    user-select: none;
+}
+
+.tagify__dropdown.users-list .remove-all-tags:hover{
+    color: white;
+    background: salmon;
+}
+
+
+/* Tags items */
+#users-list .tagify__tag{
+    white-space: nowrap;
+}
+
+#users-list .tagify__tag:hover .tagify__tag__avatar-wrap{
+    transform: scale(1.6) translateX(-10%);
+}
+
+.users-list .tagify__dropdown__itemsGroup:empty{
+    display: none;
+}
+
+.users-list .tagify__dropdown__itemsGroup::before{
+    content: attr(data-title);
+    display: inline-block;
+    font-size: .9em;
+    padding: 4px 6px;
+    margin: var(--tagify-dd-item-pad);
+    font-style: italic;
+    border-radius: 4px;
+    background: #00ce8d;
+    color: white;
+    font-weight: 600;
+}
+
+.users-list .tagify__dropdown__itemsGroup:not(:first-of-type){
+    border-top: 1px solid #DDD;
+}
+
+.tagify {
+    width: 95% !important;
+    margin: 15px !important;
+}

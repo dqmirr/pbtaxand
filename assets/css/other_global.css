@@ -1,0 +1,49 @@
+
+
+table#table_multi thead tr th:first-child,
+table#table_multi tbody tr td:first-child,
+table#table_multi thead tr th:last-child,
+table#table_pilihan tr th:last-child,
+table#table_pilihan tr td:first-child,
+table#table_pilihan tr td:last-child {
+    text-align: center !important;
+}
+table#table_pilihan tr th,
+table#table_pilihan tr td {
+    line-height: 10px !important;
+    vertical-align: middle !important;
+}
+table#table_pilihan tr td {
+    padding: 0 !important;
+}
+table#table_pilihan tr td:last-child,
+table#table_peserta tr th:last-child,
+table#table_peserta tr td:first-child,
+table#table_peserta tr td:last-child {
+    text-align: center !important;
+}
+table#table_pilihan tr th,
+table#table_pilihan tr td,
+table#table_peserta tr th,
+table#table_peserta tr td {
+    line-height: 10px !important;
+    vertical-align: middle !important;
+}
+table#table_pilihan tr td,
+table#table_peserta tr td {
+    padding: 0 !important;
+}
+.cl-theme {
+    background-color: rgba(252, 176, 52, 0.7) !important;
+}
+textarea#greeting {
+    max-height: 150px !important;
+    min-height: 85px !important;
+}
+span.error {
+    color: #dc3545 !important;
+    font-size: 80% !important;
+}
+.shadow {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+}
