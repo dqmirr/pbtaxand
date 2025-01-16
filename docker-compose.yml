@@ -8,7 +8,7 @@ services:
       - shared_data:/shared
     ports:
       - 8080:80
-    command: bash -c "composer update && /usr/sbin/apache2ctl -DFOREGROUND && service redis-server start"
+    command: bash -c "service redis-server start && composer update && /usr/sbin/apache2ctl -DFOREGROUND"
     networks:
       - app-network
     depends_on:
